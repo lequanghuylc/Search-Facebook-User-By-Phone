@@ -19,7 +19,8 @@ var _bodyParser2 = _interopRequireDefault(_bodyParser);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var app = (0, _express2.default)();
-app.listen(8080);
+var port = process.env.PORT || 8080;
+app.listen(port);
 app.use(_bodyParser2.default.urlencoded({ extended: false }));
 app.use(_bodyParser2.default.json());
 app.use(_express2.default.static(__dirname + '/views'));
